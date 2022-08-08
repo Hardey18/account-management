@@ -1,0 +1,47 @@
+[
+  {
+    "id": "5de4584f-1097-4217-896e-a7b60257149d",
+    "transactionType": "Credit",
+    "accountName": "Nurudeen Adewale",
+    "accountNumber": "8195122804",
+    "amountDeposited": 5000,
+    "createdAt": "Tue Aug 09 2022 00:02:38 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:02:38 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "c4ac5fd0-2cea-45f0-b293-4de03b054e2a",
+    "transactionType": "Credit",
+    "accountName": "Nurudeen Adewale",
+    "accountNumber": "8195122804",
+    "amountDeposited": 200,
+    "createdAt": "Tue Aug 09 2022 00:03:02 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:03:02 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "0a86e476-2604-40ee-aa2e-af9cb8697903",
+    "transactionType": "Credit",
+    "accountName": "Nurudeen Adewale",
+    "accountNumber": "8195122804",
+    "amountDeposited": 300,
+    "createdAt": "Tue Aug 09 2022 00:03:42 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:03:42 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "fc02b134-1206-436d-b65f-82e46a60cfb1",
+    "transactionType": "Credit",
+    "accountName": "Benedict Ama",
+    "accountNumber": "6955917980",
+    "amountDeposited": 100,
+    "createdAt": "Tue Aug 09 2022 00:03:58 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:03:58 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "0e2027a7-da43-42e9-a8de-a415f8d1ee1e",
+    "transactionType": "Debit",
+    "accountName": "Benedict Ama",
+    "accountNumber": "6955917980",
+    "amountWithdrawn": 50,
+    "createdAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)"
+  }
+]

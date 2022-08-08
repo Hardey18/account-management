@@ -1,0 +1,20 @@
+[
+  {
+    "id": "a91f0bcd-29d9-4c3b-a12c-536af77e4ae8",
+    "accountNumber": "8195122804",
+    "accountName": "Nurudeen Adewale",
+    "phone": "+2349067959989",
+    "balance": 5500,
+    "createdAt": "Tue Aug 09 2022 00:02:16 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:03:42 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "2dec1c6f-81e0-489e-bda3-4e9d3d1315ef",
+    "accountNumber": "6955917980",
+    "accountName": "Benedict Ama",
+    "phone": "+2349098764242",
+    "balance": 50,
+    "createdAt": "Tue Aug 09 2022 00:02:30 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)"
+  }
+]

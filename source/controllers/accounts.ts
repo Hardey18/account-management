@@ -40,7 +40,7 @@ const createAccount = (req: Request, res: Response, next: NextFunction) => {
     existAccount.push(accountData);
 
     // Save the new account
-    saveUserData(existAccount);
+    saveAccountData(existAccount);
     res.send({
         success: true,
         message: 'Account created successfully',
@@ -48,8 +48,9 @@ const createAccount = (req: Request, res: Response, next: NextFunction) => {
     })
 }
 
-const deposit = (req: Request, res: Response, next: NextFunction) => {
+const deposit = async (req: Request, res: Response, next: NextFunction) => {
     const existAccount = getAccountData();
+    const existTransaction = getTransactionData();
 
     let amount = req.body.amount;
     let accountNumber = req.body.accountNumber;
@@ -71,12 +72,24 @@ const deposit = (req: Request, res: Response, next: NextFunction) => {
         createdAt: findAccount.createdAt,
         updatedAt: date.toString(),
     }
+
+    const transactionData = {
+        id: uuidv4(),
+        transactionType: "Credit",
+        accountName: findAccount.accountName,
+        accountNumber: findAccount.accountNumber,
+        amountDeposited: amount,
+        createdAt: date.toString(),
+        updatedAt: date.toString()
+    }
     
     const updatedAccount = existAccount.filter((account: { accountNumber: string }) => account.accountNumber !== accountNumber)
 
     updatedAccount.push(accountData)
+    existTransaction.push(transactionData)
 
-    saveUserData(updatedAccount)
+    saveAccountData(updatedAccount)
+    saveTransactionData(existTransaction)
 
     res.send({
         success: true,
@@ -88,6 +101,7 @@ const deposit = (req: Request, res: Response, next: NextFunction) => {
 
 const withdrawal = (req: Request, res: Response, next: NextFunction) => {
     const existAccount = getAccountData();
+    const existTransaction = getTransactionData();
 
     let amount = req.body.amount;
     let accountNumber = req.body.accountNumber;
@@ -114,11 +128,23 @@ const withdrawal = (req: Request, res: Response, next: NextFunction) => {
         updatedAt: date.toString(),
     }
 
+    const transactionData = {
+        id: uuidv4(),
+        transactionType: "Debit",
+        accountName: findAccount.accountName,
+        accountNumber: findAccount.accountNumber,
+        amountWithdrawn: amount,
+        createdAt: date.toString(),
+        updatedAt: date.toString()
+    }
+
     const updatedAccount = existAccount.filter((account: { accountNumber: string }) => account.accountNumber !== accountNumber)
 
     updatedAccount.push(accountData)
+    existTransaction.push(transactionData)
 
-    saveUserData(updatedAccount)
+    saveAccountData(updatedAccount)
+    saveTransactionData(existTransaction)
 
     res.send({
         success: true,
@@ -130,13 +156,23 @@ const withdrawal = (req: Request, res: Response, next: NextFunction) => {
 }
 
 //read the user data from json file
-const saveUserData = (data: any) => {
+const saveAccountData = (data: any) => {
     const stringifyData = JSON.stringify(data, null, 2)
-    fs.writeFileSync('db.json', stringifyData);
+    fs.writeFileSync('account.json', stringifyData);
+}
+
+const saveTransactionData = (data: any) => {
+    const stringifyData = JSON.stringify(data, null, 2)
+    fs.writeFileSync('transaction.json', stringifyData);
 }
 
 const getAccountData = () => {
-    const jsonData: any = fs.readFileSync('db.json')
+    const jsonData: any = fs.readFileSync('account.json')
+    return JSON.parse(jsonData);
+}
+
+const getTransactionData = () => {
+    const jsonData: any = fs.readFileSync('transaction.json')
     return JSON.parse(jsonData);
 }
 

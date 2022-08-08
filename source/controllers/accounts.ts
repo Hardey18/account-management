@@ -54,16 +54,14 @@ const deposit = (req: Request, res: Response, next: NextFunction) => {
     let amount = req.body.amount;
     let accountNumber = req.body.accountNumber;
     
-    // Check if the Account Number Exists or not
-    
-    
-    
-    
     const findAccount = existAccount.find((account: { accountNumber: string }) => account.accountNumber === accountNumber);
+
     if (!findAccount) {
         return res.status(409).send({error: true, message: 'The Account Number does not exist'})
     }
+
     let totalBalance = findAccount.balance + amount;
+
     const accountData = {
         id: findAccount.id,
         accountNumber: findAccount.accountNumber,
@@ -79,11 +77,55 @@ const deposit = (req: Request, res: Response, next: NextFunction) => {
     updatedAccount.push(accountData)
 
     saveUserData(updatedAccount)
+
     res.send({
         success: true,
-        message: 'Account updated successfully',
+        message: 'The deposit to your account was successfully',
         totalBalance: totalBalance,
         amountDeposited: amount
+    })
+}
+
+const withdrawal = (req: Request, res: Response, next: NextFunction) => {
+    const existAccount = getAccountData();
+
+    let amount = req.body.amount;
+    let accountNumber = req.body.accountNumber;
+
+    const findAccount = existAccount.find((account: { accountNumber: string }) => account.accountNumber === accountNumber);
+
+    if (!findAccount) {
+        return res.status(409).send({error: true, message: 'The Account Number does not exist'})
+    }
+
+    if (findAccount.balance < amount) {
+        return res.status(409).send({error: true, message: 'The amount you are trying to withdraw exceeds your current balance'})
+    }
+
+    let totalBalance = findAccount.balance - amount;
+
+    const accountData = {
+        id: findAccount.id,
+        accountNumber: findAccount.accountNumber,
+        accountName: findAccount.accountName,
+        phone: findAccount.phone,
+        balance: totalBalance,
+        createdAt: findAccount.createdAt,
+        updatedAt: date.toString(),
+    }
+
+    const updatedAccount = existAccount.filter((account: { accountNumber: string }) => account.accountNumber !== accountNumber)
+
+    updatedAccount.push(accountData)
+
+    saveUserData(updatedAccount)
+
+    res.send({
+        success: true,
+        message: 'Your withdrawal from your account was successful',
+        totalBalance: totalBalance,
+        amountWihdrawn: amount,
+        accountNumber: findAccount.accountNumber
     })
 }
 
@@ -98,4 +140,4 @@ const getAccountData = () => {
     return JSON.parse(jsonData);
 }
 
-export default { getAccount, createAccount, deposit };
+export default { getAccount, createAccount, deposit, withdrawal };

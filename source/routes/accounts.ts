@@ -3,10 +3,12 @@ import controller from '../controllers/accounts';
 
 const router = express.Router();
 
-router.get('/accounts', controller.getAccount);
+router.get('/accounts/getAll', controller.getAccount);
 
-router.post('/accounts', controller.createAccount)
+router.post('/accounts/create', controller.createAccount)
 
-router.put('/accounts', controller.deposit)
+router.put('/accounts/deposit', controller.deposit)
+
+router.put('/accounts/withdraw', controller.withdrawal)
 
 export = router;

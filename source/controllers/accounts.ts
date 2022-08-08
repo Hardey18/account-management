@@ -16,13 +16,6 @@ const uniqueAccountNumber: string = (Math.floor(Math.random() * 10000000000) + 1
 
 let date = new Date();
 
-const getAccount = (req: Request, res: Response, next: NextFunction) => {
-    const accounts = getAccountData()
-    return res.status(200).json({
-        message: accounts
-    });
-}
-
 const createAccount = (req: Request, res: Response, next: NextFunction) => {
     const existAccount = getAccountData();
 
@@ -155,6 +148,28 @@ const withdrawal = (req: Request, res: Response, next: NextFunction) => {
     })
 }
 
+const getAllTransactions = (req: Request, res: Response, next: NextFunction) => {
+    const transactions = getTransactionData()
+    return res.status(200).json({
+        message: transactions
+    });
+}
+
+const getTransactionsByAccountNumber = (req: Request, res: Response, next: NextFunction) => {
+    const accountNumber: string = req.params.accountNumber
+    const transactions = getTransactionData()
+
+    const findAccount = transactions.filter((account: { accountNumber: string }) => account.accountNumber === accountNumber);
+
+    if (!findAccount) {
+        return res.status(409).send({error: true, message: 'Transaction with the given Account Number does not exist'})
+    }
+
+    return res.status(200).json({
+        message: findAccount
+    });
+}
+
 //read the user data from json file
 const saveAccountData = (data: any) => {
     const stringifyData = JSON.stringify(data, null, 2)
@@ -176,4 +191,4 @@ const getTransactionData = () => {
     return JSON.parse(jsonData);
 }
 
-export default { getAccount, createAccount, deposit, withdrawal };
+export default { createAccount, deposit, withdrawal, getAllTransactions, getTransactionsByAccountNumber };

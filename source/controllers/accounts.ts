@@ -1,18 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
-
-interface Account {
-    id: String;
-    accountNumber: String;
-    accountName: String;
-    phone: String;
-    balance: Number;
-    createdAt: String;
-    updatedAt: String;
-}
-
-const uniqueAccountNumber: string = (Math.floor(Math.random() * 10000000000) + 10000000000).toString().substring(1);
+import { Account } from '../interface';
+import { getAccountData, getTransactionData, saveAccountData, saveTransactionData, uniqueAccountNumber } from '../utils';
 
 let date = new Date();
 
@@ -29,10 +18,8 @@ const createAccount = (req: Request, res: Response, next: NextFunction) => {
         updatedAt: date.toString()
     }
 
-    // Append the Account
     existAccount.push(accountData);
 
-    // Save the new account
     saveAccountData(existAccount);
     res.send({
         success: true,
@@ -86,7 +73,7 @@ const deposit = async (req: Request, res: Response, next: NextFunction) => {
 
     res.send({
         success: true,
-        message: 'The deposit to your account was successfully',
+        message: 'The deposit to your account was successfull',
         totalBalance: totalBalance,
         amountDeposited: amount
     })
@@ -168,27 +155,6 @@ const getTransactionsByAccountNumber = (req: Request, res: Response, next: NextF
     return res.status(200).json({
         message: findAccount
     });
-}
-
-//read the user data from json file
-const saveAccountData = (data: any) => {
-    const stringifyData = JSON.stringify(data, null, 2)
-    fs.writeFileSync('account.json', stringifyData);
-}
-
-const saveTransactionData = (data: any) => {
-    const stringifyData = JSON.stringify(data, null, 2)
-    fs.writeFileSync('transaction.json', stringifyData);
-}
-
-const getAccountData = () => {
-    const jsonData: any = fs.readFileSync('account.json')
-    return JSON.parse(jsonData);
-}
-
-const getTransactionData = () => {
-    const jsonData: any = fs.readFileSync('transaction.json')
-    return JSON.parse(jsonData);
 }
 
 export default { createAccount, deposit, withdrawal, getAllTransactions, getTransactionsByAccountNumber };

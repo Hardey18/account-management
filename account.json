@@ -16,5 +16,14 @@
     "balance": 50,
     "createdAt": "Tue Aug 09 2022 00:02:30 GMT+0100 (West Africa Standard Time)",
     "updatedAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "cd30639a-20f2-47c2-9961-50639a310c7e",
+    "accountNumber": "6301860769",
+    "accountName": "Oyinkansola Alabi",
+    "phone": "+345634231231",
+    "balance": 17000,
+    "createdAt": "Tue Aug 09 2022 22:36:02 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 22:39:33 GMT+0100 (West Africa Standard Time)"
   }
 ]

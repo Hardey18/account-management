@@ -43,5 +43,32 @@
     "amountWithdrawn": 50,
     "createdAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)",
     "updatedAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "3b7cee24-0747-43da-8a15-0327eb4894ac",
+    "transactionType": "Credit",
+    "accountName": "Oyinkansola Alabi",
+    "accountNumber": "6301860769",
+    "amountDeposited": 21000,
+    "createdAt": "Tue Aug 09 2022 22:37:12 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 22:37:12 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "fc8e016d-0b3d-4b5e-bbbf-17873983a689",
+    "transactionType": "Credit",
+    "accountName": "Oyinkansola Alabi",
+    "accountNumber": "6301860769",
+    "amountDeposited": 2000,
+    "createdAt": "Tue Aug 09 2022 22:39:22 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 22:39:22 GMT+0100 (West Africa Standard Time)"
+  },
+  {
+    "id": "02d1e662-5001-4e1a-be52-fd1c9d7cdf7f",
+    "transactionType": "Debit",
+    "accountName": "Oyinkansola Alabi",
+    "accountNumber": "6301860769",
+    "amountWithdrawn": 6000,
+    "createdAt": "Tue Aug 09 2022 22:39:33 GMT+0100 (West Africa Standard Time)",
+    "updatedAt": "Tue Aug 09 2022 22:39:33 GMT+0100 (West Africa Standard Time)"
   }
 ]

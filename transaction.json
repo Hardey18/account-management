@@ -1,74 +1,38 @@
 [
   {
-    "id": "5de4584f-1097-4217-896e-a7b60257149d",
+    "id": "584d7eca-2be8-47fd-97c1-0f253907a0c0",
     "transactionType": "Credit",
     "accountName": "Nurudeen Adewale",
-    "accountNumber": "8195122804",
-    "amountDeposited": 5000,
-    "createdAt": "Tue Aug 09 2022 00:02:38 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 00:02:38 GMT+0100 (West Africa Standard Time)"
+    "accountNumber": "1554132768",
+    "amountDeposited": 2300,
+    "createdAt": "1660128900",
+    "updatedAt": "1660128900"
   },
   {
-    "id": "c4ac5fd0-2cea-45f0-b293-4de03b054e2a",
+    "id": "86796008-e981-429a-904f-39d46307cae1",
     "transactionType": "Credit",
     "accountName": "Nurudeen Adewale",
-    "accountNumber": "8195122804",
-    "amountDeposited": 200,
-    "createdAt": "Tue Aug 09 2022 00:03:02 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 00:03:02 GMT+0100 (West Africa Standard Time)"
+    "accountNumber": "1554132768",
+    "amountDeposited": 700,
+    "createdAt": "1660128914",
+    "updatedAt": "1660128914"
   },
   {
-    "id": "0a86e476-2604-40ee-aa2e-af9cb8697903",
+    "id": "0f54b172-6d82-4d2f-88e4-91381f304b7c",
     "transactionType": "Credit",
-    "accountName": "Nurudeen Adewale",
-    "accountNumber": "8195122804",
-    "amountDeposited": 300,
-    "createdAt": "Tue Aug 09 2022 00:03:42 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 00:03:42 GMT+0100 (West Africa Standard Time)"
+    "accountName": "Oyinkansola Alabi",
+    "accountNumber": "9806441110",
+    "amountDeposited": 1700,
+    "createdAt": "1660128939",
+    "updatedAt": "1660128939"
   },
   {
-    "id": "fc02b134-1206-436d-b65f-82e46a60cfb1",
-    "transactionType": "Credit",
-    "accountName": "Benedict Ama",
-    "accountNumber": "6955917980",
-    "amountDeposited": 100,
-    "createdAt": "Tue Aug 09 2022 00:03:58 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 00:03:58 GMT+0100 (West Africa Standard Time)"
-  },
-  {
-    "id": "0e2027a7-da43-42e9-a8de-a415f8d1ee1e",
+    "id": "bae5997d-240c-4ace-aff8-f72fb192e1de",
     "transactionType": "Debit",
-    "accountName": "Benedict Ama",
-    "accountNumber": "6955917980",
-    "amountWithdrawn": 50,
-    "createdAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 00:04:19 GMT+0100 (West Africa Standard Time)"
-  },
-  {
-    "id": "3b7cee24-0747-43da-8a15-0327eb4894ac",
-    "transactionType": "Credit",
-    "accountName": "Oyinkansola Alabi",
-    "accountNumber": "6301860769",
-    "amountDeposited": 21000,
-    "createdAt": "Tue Aug 09 2022 22:37:12 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 22:37:12 GMT+0100 (West Africa Standard Time)"
-  },
-  {
-    "id": "fc8e016d-0b3d-4b5e-bbbf-17873983a689",
-    "transactionType": "Credit",
-    "accountName": "Oyinkansola Alabi",
-    "accountNumber": "6301860769",
-    "amountDeposited": 2000,
-    "createdAt": "Tue Aug 09 2022 22:39:22 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 22:39:22 GMT+0100 (West Africa Standard Time)"
-  },
-  {
-    "id": "02d1e662-5001-4e1a-be52-fd1c9d7cdf7f",
-    "transactionType": "Debit",
-    "accountName": "Oyinkansola Alabi",
-    "accountNumber": "6301860769",
-    "amountWithdrawn": 6000,
-    "createdAt": "Tue Aug 09 2022 22:39:33 GMT+0100 (West Africa Standard Time)",
-    "updatedAt": "Tue Aug 09 2022 22:39:33 GMT+0100 (West Africa Standard Time)"
+    "accountName": "Nurudeen Adewale",
+    "accountNumber": "1554132768",
+    "amountWithdrawn": 1500,
+    "createdAt": "1660128962",
+    "updatedAt": "1660128962"
   }
 ]

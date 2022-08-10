@@ -14,8 +14,8 @@ const createAccount = (req: Request, res: Response, next: NextFunction) => {
         accountName: req.body.accountName,
         phone: req.body.phone,
         balance: 0,
-        createdAt: date.toString(),
-        updatedAt: date.toString()
+        createdAt: Math.floor(date.getTime() / 1000).toFixed(0),
+        updatedAt: Math.floor(date.getTime() / 1000).toFixed(0)
     }
 
     existAccount.push(accountData);
@@ -50,7 +50,7 @@ const deposit = async (req: Request, res: Response, next: NextFunction) => {
         phone: findAccount.phone,
         balance: totalBalance,
         createdAt: findAccount.createdAt,
-        updatedAt: date.toString(),
+        updatedAt: Math.floor(date.getTime() / 1000).toFixed(0)
     }
 
     const transactionData = {
@@ -59,8 +59,8 @@ const deposit = async (req: Request, res: Response, next: NextFunction) => {
         accountName: findAccount.accountName,
         accountNumber: findAccount.accountNumber,
         amountDeposited: amount,
-        createdAt: date.toString(),
-        updatedAt: date.toString()
+        createdAt: Math.floor(date.getTime() / 1000).toFixed(0),
+        updatedAt: Math.floor(date.getTime() / 1000).toFixed(0)
     }
     
     const updatedAccount = existAccount.filter((account: { accountNumber: string }) => account.accountNumber !== accountNumber)
@@ -105,7 +105,7 @@ const withdrawal = (req: Request, res: Response, next: NextFunction) => {
         phone: findAccount.phone,
         balance: totalBalance,
         createdAt: findAccount.createdAt,
-        updatedAt: date.toString(),
+        updatedAt: Math.floor(date.getTime() / 1000).toFixed(0)
     }
 
     const transactionData = {
@@ -114,8 +114,8 @@ const withdrawal = (req: Request, res: Response, next: NextFunction) => {
         accountName: findAccount.accountName,
         accountNumber: findAccount.accountNumber,
         amountWithdrawn: amount,
-        createdAt: date.toString(),
-        updatedAt: date.toString()
+        createdAt: Math.floor(date.getTime() / 1000).toFixed(0),
+        updatedAt: Math.floor(date.getTime() / 1000).toFixed(0)
     }
 
     const updatedAccount = existAccount.filter((account: { accountNumber: string }) => account.accountNumber !== accountNumber)
@@ -136,9 +136,10 @@ const withdrawal = (req: Request, res: Response, next: NextFunction) => {
 }
 
 const getAllTransactions = (req: Request, res: Response, next: NextFunction) => {
-    const transactions = getTransactionData()
+    const transactions = getTransactionData();
+    const sortedTransaction = transactions.sort((objA:any, objB:any) => Number(objB.createdAt) - Number(objA.createdAt));
     return res.status(200).json({
-        message: transactions
+        message: sortedTransaction
     });
 }
 

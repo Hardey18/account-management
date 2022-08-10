@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc"
+    "dev": "node source/server.ts",
+    "build": "rm -rf build/ && prettier --write source/ && tsc",
+    "test": "jest"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,6 +21,11 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4"
+    "@types/jest": "^28.1.6",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "jest": "^28.1.3",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.7"
   }
 }

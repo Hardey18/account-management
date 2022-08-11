@@ -1,19 +1,13 @@
-FROM node:12-alpine
+FROM node:12-stretch
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR  /home/node/app
 
-WORKDIR /home/node/app
-
-COPY package*.json ./
-
-USER node
+COPY . .
 
 RUN yarn
 
-COPY --chown=node:node . .
+RUN npx tsc
 
-RUN yarn tsc
+EXPOSE 3000
 
-EXPOSE 4000
-
-CMD [ "node --loader ts-node/esm", "source/server.ts" ]
+CMD yarn dev
